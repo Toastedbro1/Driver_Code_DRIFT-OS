@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------- #
 #                                                                              #
 # 	Module:       main.py                                                      #
-# 	Author:       hayden                                                       #
+# 	Author:       Hayden Robertson                                             #
 # 	Created:      10/27/2026, 2:45:21 PM                                       #
 # 	Description:  V5 project                                                   #
 #                                                                              #
@@ -80,7 +80,7 @@ def rc_auto_loop_function_controller_1():
                     sleep(25, MSEC)
             
             # Note: 
-            # Remember this for other coding projects
+            # Remember this for other vex coding projects
             # calculate the drivetrain motor velocities from the controller joystick axies
             # left = axis3 + axis1
             # right = axis3 - axis1
@@ -113,20 +113,14 @@ remote_control_code_enabled = True
 
 rc_auto_loop_thread_controller_1 = Thread(rc_auto_loop_function_controller_1)
 
-def drivercontrol():
-    global remote_control_code_enabled
-    while not controller_1.button_center.pressing():
-        sleep(25, MSEC)
-    remote_control_code_enabled = True
-
 def autonomous():
     brain.screen.clear_screen()
-    brain.screen.print("autonomous code")
+    brain.screen.print("Autonomous Code Enabled")
     # place automonous code here
 
 def user_control():
     brain.screen.clear_screen()
-    brain.screen.print("driver control")
+    brain.screen.print("Driver Control Enabled")
     # place driver control in this while loop
     while True:
         wait(20, MSEC)
