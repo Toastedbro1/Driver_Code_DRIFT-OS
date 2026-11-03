@@ -16,14 +16,18 @@ import math
 brain=Brain()
 
 # config
-left_motor_a = Motor(Ports.PORT1, GearSetting.RATIO_18_1, True)
-left_motor_b = Motor(Ports.PORT4, GearSetting.RATIO_18_1, True)
+left_motor_a = Motor(Ports.PORT20, GearSetting.RATIO_18_1, True)
+left_motor_b = Motor(Ports.PORT19, GearSetting.RATIO_18_1, True)
 left_drive_smart = MotorGroup(left_motor_a, left_motor_b)
-right_motor_a = Motor(Ports.PORT2, GearSetting.RATIO_18_1, False)
-right_motor_b = Motor(Ports.PORT3, GearSetting.RATIO_18_1, False)
+right_motor_a = Motor(Ports.PORT11, GearSetting.RATIO_18_1, False)
+right_motor_b = Motor(Ports.PORT12, GearSetting.RATIO_18_1, False)
 right_drive_smart = MotorGroup(right_motor_a, right_motor_b)
-drivetrain_inertial = Inertial(Ports.PORT5)
+drivetrain_inertial = Inertial(Ports.PORT21)
 drivetrain = SmartDrive(left_drive_smart, right_drive_smart, drivetrain_inertial, 319.19, 320, 40, MM, 60)
+RollerMotor = Motor(Ports.PORT10, GearSetting.RATIO_18_1, False)
+LiftGroup_motor_a = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
+LiftGroup_motor_b = Motor(Ports.PORT2, GearSetting.RATIO_18_1, False)
+LiftGroup = MotorGroup(LiftGroup_motor_a, LiftGroup_motor_b)
 controller_1 = Controller(PRIMARY)
 
 
