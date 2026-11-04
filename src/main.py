@@ -130,10 +130,13 @@ def user_control():
         wait(20, MSEC)
         when controller_1.buttonL1.pressing():
             RollerMotor.spin(FORWARD)
+        
         when controller_1.buttonL2.pressing():
             RollerMotor.spin(REVERSE)
+        
         when controller_1.buttonR1.pressing():
             LiftGroup.spin(FORWARD)
+        
         when controller_1.buttonR2.pressing():
             LiftGroup.spin(REVERSE)
 
