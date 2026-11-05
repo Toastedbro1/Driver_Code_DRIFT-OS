@@ -124,22 +124,22 @@ def autonomous():
 
 def user_control():
     brain.screen.clear_screen()
+    brain.screen.print("Setting Up Driver Control")
+    LiftGroup.set_velocity(100, PERCENT)
+    liftGroup.set_stopping(HOLD)
+    brain.screen.clear_screen()
     brain.screen.print("Driver Control Enabled")
     # place driver control in this while loop
     while True:
         wait(20, MSEC)
-        when controller_1.buttonL1.pressing():
+        if controller_1.buttonR1.pressing():
             RollerMotor.spin(FORWARD)
-        
-        when controller_1.buttonL2.pressing():
+        if controller_1.buttonR2.pressing():
             RollerMotor.spin(REVERSE)
-        
-        when controller_1.buttonR1.pressing():
+        if controller_1.buttonL1.pressing():
             LiftGroup.spin(FORWARD)
-        
-        when controller_1.buttonR2.pressing():
+        if controller_1.buttonL2.pressing():
             LiftGroup.spin(REVERSE)
-
 # create competition instance
 comp = Competition(user_control, autonomous)
 
