@@ -29,6 +29,7 @@ LiftGroup_motor_a = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
 LiftGroup_motor_b = Motor(Ports.PORT2, GearSetting.RATIO_18_1, False)
 LiftGroup = MotorGroup(LiftGroup_motor_a, LiftGroup_motor_b)
 ClawMotor = Motor(Ports.PORT5, GearSetting.RATIO_18_1, False)
+InertialSensor = Inertial(Ports.PORT21)
 controller_1 = Controller(PRIMARY)
 
 
